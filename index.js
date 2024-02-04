@@ -62,10 +62,10 @@ app.use(express.json())
     app.all('*', cors({ origin: 'allmethods.com' }))
 */
 
-// app.use(require('cors')()) // Run with defaults.
-app.use(require('cors')({
-    origin: ["http://localhost:3000", "http://localhost:4173", "http://localhost:5173"]
-}))
+app.use(require('cors')()) // Run with defaults.
+// app.use(require('cors')({
+//     origin: ["http://localhost:3000", "http://localhost:4173", "http://localhost:5173"]
+// }))
 
 // Call static uploadFile:
 app.use('/upload', express.static('./upload'))
@@ -105,7 +105,7 @@ app.use(require('./src/routes'))
 app.use(require('./src/middlewares/errorHandler'))
 
 // RUN SERVER:
-app.listen(PORT, HOST, () => console.log(`http://${HOST}:${PORT}`))
+app.listen(PORT, () => console.log(`http://${HOST}:${PORT}`))
 
 /* ------------------------------------------------------- */
 // Syncronization (must be in commentLine):
