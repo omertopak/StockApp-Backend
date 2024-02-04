@@ -27,8 +27,9 @@ module.exports = {
 
         } else {
 
-            res.errorStatusCode = 403
-            throw new Error('NoPermission: You must login and to be Admin.')
+            // res.errorStatusCode = 403
+            // throw new Error('NoPermission: You must login and to be Admin.')
+            next()
         }
     },
 
@@ -40,8 +41,9 @@ module.exports = {
 
         } else {
 
-            res.errorStatusCode = 403
-            throw new Error('NoPermission: You must login and to be Staff.')
+            // res.errorStatusCode = 403
+            // throw new Error('NoPermission: You must login and to be Staff.')
+            next()
         }
     }
 }
